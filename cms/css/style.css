@@ -1,0 +1,12 @@
+.navbar {
+	background: transparent;
+}
+.jumbotron{
+	height: 400px;
+	padding-top: 100px;
+	background-image: url('../images/soccer.jpg');
+	background-position: center;
+}
+li.active {
+	color: #ffffff;
+}
