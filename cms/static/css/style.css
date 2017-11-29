@@ -47,3 +47,9 @@ nav a, nav span, nav button{
 	color: #ffffff;
 	text-shadow: 1px 1px 4px #000000;
 }
+
+
+/*Forms Admin*/
+#new, #edit{
+	display: none;
+}

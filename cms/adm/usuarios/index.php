@@ -24,6 +24,8 @@ $users = $db->select_all('users');
 	<link rel="stylesheet" href="https://bootswatch.com/3/journal/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+  	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="../../static/css/style.css">
@@ -64,24 +66,15 @@ $users = $db->select_all('users');
 				<table class="table">
 				  <thead>
 				    <tr>
-				      <th>Id</th>
 				      <th>Nome</th>
 				      <th>Email</th>
 				    </tr>
 				  </thead>
 				  <tbody>
 				  <?php foreach($users as $user) { ?>
-					    <tr>
-					      <td><?=$user['id']?></td>
-					      <td><?=$user['name']?></td>
-					      <td><?=$user['email']?></td>
-					    </tr>
-				    <?php } ?>
-				    <?php foreach($users as $user) { ?>
-					    <tr>
-					      <td><?=$user['id']?></td>
-					      <td><?=$user['name']?></td>
-					      <td><?=$user['email']?></td>
+					    <tr id='<?=$user['id']?>'>
+					      <td name="name"><?=$user['name']?></td>
+					      <td name="email"><?=$user['email']?></td>
 					    </tr>
 				    <?php } ?>
 				  </tbody>
@@ -89,11 +82,60 @@ $users = $db->select_all('users');
 			</div>
 			<!-- Side Menu -->
 			<div class="col-lg-4">
-				Teste
+				<div id="new">
+					<form id="formNew" class="form-horizontal">
+					  <legend>Editar Usuário</legend>
+					    <div class="form-group">
+					      <div class="col-lg-12">
+					      	<label for="inputName">Nome:</label>
+					        <input type="text" class="form-control" id="inputName">
+					      </div>
+					    </div>
+					  	<div class="form-group">
+					      <div class="col-lg-12">
+					      	<label for="inputEmail">Email:</label>
+					        <input type="email" class="form-control" id="inputEmail">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-lg-6">
+					      	<button id="saveNew" type="button" class="btn btn-info btn-block pull-right" data-dismiss="modal">Salvar</button>	
+					      </div>
+					      <div class="col-lg-6">
+					      	<button id="cancelNew" type="button" class="btn btn-default btn-block pull-right" data-dismiss="modal">Cancelar</button>	
+					      </div>
+					    </div>   
+					</form>
+				</div>
+				<div id="edit">
+					<form id="formEdit" class="form-horizontal">
+					  <legend>Editar Usuário</legend>
+					    <div class="form-group">
+					      <div class="col-lg-12">
+					      	<label for="email">Nome:</label>
+					        <input type="text" class="form-control" id="name" name="name">
+					      </div>
+					    </div>
+					  	<div class="form-group">
+					      <div class="col-lg-12">
+					      	<label for="email">Email:</label>
+					        <input type="email" class="form-control" id="email" name="email">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-lg-6">
+					      	<button id="saveEdit" type="button" class="btn btn-info btn-block">Salvar</button>	
+					      </div>
+					      <div class="col-lg-6">
+					      	<button id="cancelEdit" type="button" class="btn btn-default btn-block">Cancelar</button>	
+					      </div>
+					    </div>   
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
 	
-	<script src="../js/action.js"></script>
+	<script src="../../static/js/action.js"></script>
 </body>
 </html>
