@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +45,12 @@ session_start();
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4"></div>
+			<?php if(isset($_SESSION['userid'])){ ?>
+				<h1>Bom dia, <?=$_SESSION['name']?></h1>
+			<?php } ?>
 			<!-- Side Menu -->
 			<div class="col-lg-4">
+				<?php if(!isset($_SESSION['userid'])){ ?>
 				<form id="loginForm" class="form-horizontal">
 				  <legend>Login</legend>
 				    <div class="form-group">
@@ -74,6 +75,7 @@ session_start();
 				    </div>
 				    
 				</form>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

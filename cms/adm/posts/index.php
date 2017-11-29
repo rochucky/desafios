@@ -36,8 +36,8 @@ if(!isset($_SESSION['userid'])){
 			</div>
 			<div class="collapse navbar-collapse pull-right" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="nav-item"><a href="/posts">Posts</a></li>
-					<li class="nav-item"><a href="/usuarios">Usuários</a></li>
+					<li class="nav-item"><a href="../posts">Posts</a></li>
+					<li class="nav-item"><a href="../usuarios">Usuários</a></li>
 				</ul>
 			</div>
 		</div>
