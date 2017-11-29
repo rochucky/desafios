@@ -1,12 +1,49 @@
-.navbar {
-	background: transparent;
+body {
+	background-color: #CDCDCD;
 }
+
+/*Menu*/
+@media screen and (min-width: 480px) {
+	.navbar {
+		background-color: rgba(0,0,0,0.45);
+		padding-left: 7.14%;
+		padding-right: 7.14%;
+		transition: background-color 1s
+	}
+}
+@media screen and (max-width: 480px) {
+	.navbar {
+		background-color: rgba(0,0,0,0.45);
+		transition: background-color 1s
+	}
+}
+
+.navbar.black {
+	background-color: rgba(0,0,0,1);
+	transition: background-color 1s;
+}
+nav a, nav span{
+	color: #ffffff;
+	text-shadow: 1px 1px 4px #000000;
+}
+
+.nav > li > a:hover, .nav > li > a:focus, .nav > li > a:active{
+    background-color: rgba(255,255,255,0);
+    text-decoration: underline;
+}
+
+
+
+/*Jumbotron*/
 .jumbotron{
-	height: 400px;
+	height: 300px;
 	padding-top: 100px;
 	background-image: url('../images/soccer.jpg');
 	background-position: center;
+	padding-left: 7.14%;
+	padding-right: 7.14%;
 }
-li.active {
+.jumbotron > h1 {
 	color: #ffffff;
+	text-shadow: 1px 1px 4px #000000;
 }

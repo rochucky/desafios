@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Information</title>
+	<title>Esportes - Information</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://bootswatch.com/3/journal/bootstrap.min.css">
@@ -11,7 +11,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	
@@ -24,13 +25,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span> 
 				</button>
-				<a class="navbar-brand" href="./">Information</a>
+				<a class="navbar-brand" href="../">Information</a>
 			</div>
 			<div class="collapse navbar-collapse pull-right" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="nav-item"><a href="negocios">Negócios</a></li>
-					<li class="nav-item"><a href="esportes">Esporte</a></li>
-					<li class="nav-item"><a href="tecnologia">Tecnologia</a></li>
+					<li class="nav-item"><a href="../negocios">Negócios</a></li>
+					<li class="nav-item"><a href="../esportes">Esporte</a></li>
+					<li class="nav-item"><a href="../tecnologia">Tecnologia</a></li>
 				</ul>
 			</div>
 		</div>
@@ -39,6 +40,7 @@
 
 	<!-- Top Image -->
 	<div class="jumbotron">
+	    <h1><?=$page?></h1> 
 	</div>
 	
 	<!-- Body -->
