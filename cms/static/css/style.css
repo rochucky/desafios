@@ -22,7 +22,7 @@ body {
 	background-color: rgba(0,0,0,1);
 	transition: background-color 1s;
 }
-nav a, nav span{
+nav a, nav span, nav button{
 	color: #ffffff;
 	text-shadow: 1px 1px 4px #000000;
 }

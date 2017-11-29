@@ -4,6 +4,12 @@ if(!isset($_SESSION['userid'])){
 	header('location: ../');
 }
 
+require_once('../../classes/Sql.php');
+
+$db = new Sql();
+
+// Get all user data
+$users = $db->select_all('users');
 
 ?>
 
@@ -21,6 +27,7 @@ if(!isset($_SESSION['userid'])){
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="../../static/css/style.css">
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	
@@ -29,9 +36,7 @@ if(!isset($_SESSION['userid'])){
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span> 
+				<span class="glyphicon glyphicon-menu-hamburger"></span>
 				</button>
 				<a class="navbar-brand">Admin</a>
 			</div>
@@ -49,21 +54,38 @@ if(!isset($_SESSION['userid'])){
 	<!-- Body -->
 	<div class="container">
 		<div class="row">
+			<div class="col-lg-8">
+				<h1>Usuários</h1>
+			</div>
+		</div>
+		<div class="row">
 			<!-- Posts -->
 			<div class="col-lg-8">
-				<div class="card">
-				  <h3 class="card-header">Card header</h3>
-				  <div class="card-body">
-				    <h5 class="card-title">Special title treatment</h5>
-				    <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				    <a href="#" class="card-link">Card link</a>
-				    <a href="#" class="card-link">Another link</a>
-				  </div>
-				  <div class="card-footer text-muted">
-				    2 days ago
-				  </div>
-				</div>
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th>Id</th>
+				      <th>Nome</th>
+				      <th>Email</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  <?php foreach($users as $user) { ?>
+					    <tr>
+					      <td><?=$user['id']?></td>
+					      <td><?=$user['name']?></td>
+					      <td><?=$user['email']?></td>
+					    </tr>
+				    <?php } ?>
+				    <?php foreach($users as $user) { ?>
+					    <tr>
+					      <td><?=$user['id']?></td>
+					      <td><?=$user['name']?></td>
+					      <td><?=$user['email']?></td>
+					    </tr>
+				    <?php } ?>
+				  </tbody>
+				</table> 
 			</div>
 			<!-- Side Menu -->
 			<div class="col-lg-4">

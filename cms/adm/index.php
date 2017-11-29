@@ -24,9 +24,7 @@ session_start();
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span> 
+				<span class="glyphicon glyphicon-menu-hamburger"></span> 
 				</button>
 				<a class="navbar-brand" href="./">Admin</a>
 			</div>
@@ -46,7 +44,7 @@ session_start();
 		<div class="row">
 			<div class="col-lg-4"></div>
 			<?php if(isset($_SESSION['userid'])){ ?>
-				<h1>Bom dia, <?=$_SESSION['name']?></h1>
+				<h3>Bom dia, <?=$_SESSION['name']?></h3>
 			<?php } ?>
 			<!-- Side Menu -->
 			<div class="col-lg-4">

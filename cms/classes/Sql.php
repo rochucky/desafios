@@ -36,6 +36,14 @@ class Sql{
 		return $result->fetch_assoc();
 	}
 
+	public function select_all($table){
+		$result = mysqli_query($this->conn, 'select * from '.$table);
+		while ($data = $result->fetch_assoc()){
+			$results[] = $data;
+		}
+		return $results;
+	}
+
 }
 
 ?>

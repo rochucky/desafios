@@ -28,9 +28,7 @@ $db = new Sql();
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span> 
+				<span class="glyphicon glyphicon-menu-hamburger"></span> 
 				</button>
 				<a class="navbar-brand" href="./">Information</a>
 			</div>
