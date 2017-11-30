@@ -16,6 +16,7 @@ session_start();
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/noty/lib/noty.css">
 </head>
 <body>
 	
@@ -66,18 +67,13 @@ session_start();
 				      	<button id="login" type="button" class="btn btn-default btn-block pull-right" data-dismiss="modal">Entrar</button>	
 				      </div>
 				    </div>
-				    <div class="form-group">
-				      <div class="col-lg-12">
-				      	<a class="pull-" href="">Esqueceu a senha?</a>
-				      </div>
-				    </div>
 				    
 				</form>
 				<?php } ?>
 			</div>
 		</div>
 	</div>
-	
+	<script src="../static/noty/lib/noty.min.js"></script>
 	<script src="login.js"></script>
 </body>
 </html>

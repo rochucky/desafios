@@ -22,5 +22,12 @@ $(document).ready(function(){
 	$('#cancelEdit').click(function(){
 		$('#edit').hide();
 	});
+	
+	$('#create').click(function(){
+		$('#new').show();
+	});
+	$('#cancelNew').click(function(){
+		$('#new').hide();
+	});
 
 });

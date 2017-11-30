@@ -7,7 +7,7 @@ class Sql{
 
 	function __construct(){
 		
-		$this->conn = mysqli_connect('localhost','root','','cms');
+		$this->conn = mysqli_connect('localhost','root','eucs1234','csm');
 		if(!$this->conn)
 			echo 'Error';
 		

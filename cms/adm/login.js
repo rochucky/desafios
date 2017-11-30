@@ -15,9 +15,13 @@ $(document).ready(function(){
 				console.log(response);
 				data = JSON.parse(response);
 				if (data.response == false){
-					alert(data.message);
+					new Noty({
+					    text: data.message,
+					    type: 'error',
+					    layout:'center'
+					}).show();
 				}else {
-					alert('ok');
+					location.reload();
 				}
 			},
 			error: function(err){

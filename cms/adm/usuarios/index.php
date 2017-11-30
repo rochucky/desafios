@@ -56,9 +56,11 @@ $users = $db->select_all('users');
 	<!-- Body -->
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-4">
 				<h1>Usuários</h1>
+				<button id="create" class="btn btn-info">Novo Usuário</button>
 			</div>
+
 		</div>
 		<div class="row">
 			<!-- Posts -->
@@ -84,7 +86,7 @@ $users = $db->select_all('users');
 			<div class="col-lg-4">
 				<div id="new">
 					<form id="formNew" class="form-horizontal">
-					  <legend>Editar Usuário</legend>
+					  <legend>Novo Usuário</legend>
 					    <div class="form-group">
 					      <div class="col-lg-12">
 					      	<label for="inputName">Nome:</label>
