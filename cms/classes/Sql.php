@@ -7,11 +7,10 @@ class Sql{
 	public $query;
 
 	function __construct(){
-		if(!isset($_SESSION['userid'])){
-			session_start();
+		if(isset($_SESSION['userid'])){
+			$this->userid = $_SESSION['userid'];
 		}
-		$this->userid = $_SESSION['userid'];
-		$this->conn = mysqli_connect('localhost','root','eucs1234','csm');
+		$this->conn = mysqli_connect('localhost','root','eucs1234','cms');
 		if(!$this->conn)
 			echo 'Error';
 	}
