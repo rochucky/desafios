@@ -28,6 +28,7 @@ $users = $db->select_all('users');
   	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
 	<!-- Styles -->
+	<link rel="stylesheet" href="../../static/noty/lib/noty.css">
 	<link rel="stylesheet" href="../../static/css/style.css">
 	<link rel="stylesheet" href="index.css">
 </head>
@@ -84,37 +85,12 @@ $users = $db->select_all('users');
 			</div>
 			<!-- Side Menu -->
 			<div class="col-lg-4">
-				<div id="new">
-					<form id="formNew" class="form-horizontal">
-					  <legend>Novo Usuário</legend>
-					    <div class="form-group">
-					      <div class="col-lg-12">
-					      	<label for="inputName">Nome:</label>
-					        <input type="text" class="form-control" id="inputName">
-					      </div>
-					    </div>
-					  	<div class="form-group">
-					      <div class="col-lg-12">
-					      	<label for="inputEmail">Email:</label>
-					        <input type="email" class="form-control" id="inputEmail">
-					      </div>
-					    </div>
-					    <div class="form-group">
-					      <div class="col-lg-6">
-					      	<button id="saveNew" type="button" class="btn btn-info btn-block pull-right" data-dismiss="modal">Salvar</button>	
-					      </div>
-					      <div class="col-lg-6">
-					      	<button id="cancelNew" type="button" class="btn btn-default btn-block pull-right" data-dismiss="modal">Cancelar</button>	
-					      </div>
-					    </div>   
-					</form>
-				</div>
 				<div id="edit">
-					<form id="formEdit" class="form-horizontal">
+					<form id="formEdit" data="users" class="form-horizontal">
 					  <legend>Editar Usuário</legend>
 					    <div class="form-group">
 					      <div class="col-lg-12">
-					      	<label for="email">Nome:</label>
+					      	<label for="name">Nome:</label>
 					        <input type="text" class="form-control" id="name" name="name">
 					      </div>
 					    </div>
@@ -126,18 +102,21 @@ $users = $db->select_all('users');
 					    </div>
 					    <div class="form-group">
 					      <div class="col-lg-6">
-					      	<button id="saveEdit" type="button" class="btn btn-info btn-block">Salvar</button>	
+					      	<button id="save" type="button" class="btn btn-info btn-block">Salvar</button>	
 					      </div>
 					      <div class="col-lg-6">
-					      	<button id="cancelEdit" type="button" class="btn btn-default btn-block">Cancelar</button>	
+					      	<button id="cancel" type="button" class="btn btn-default btn-block">Cancelar</button>	
 					      </div>
-					    </div>   
+					    </div>
+					    <input type="hidden" id="id" name="id" /> 
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+	<script src="../../static/noty/lib/noty.min.js"></script>
+	<script src="../../static/js/notification.js"></script>
 	<script src="../../static/js/action.js"></script>
 </body>
 </html>

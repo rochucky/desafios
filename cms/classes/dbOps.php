@@ -30,6 +30,21 @@ function Login($db,$param){
 	echo json_encode($data);
 }
 
+function Save($db,$param){
+	if($param['fields']['id'] == ''){
+		unset($param['fields']['id']);
+		$data['response'] = $db->insert($param['table'],$param['fields']);
+		$data['message'] = 'Registro inserido com sucesso';
+	}
+	else{
+		$id = $param['fields']['id'];
+		unset($param['fields']['id']);
+		$data['response'] = $db->update($param['table'],$param['fields'],$id);	
+		$data['message'] = 'Registro atualizado com sucesso';
+	}
+
+	echo json_encode($data);
+}
 
 
 ?>
