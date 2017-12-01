@@ -31,11 +31,17 @@ $(document).ready(function(){
 
 	// Form Cancel Button
 	$('#cancel').click(function(){
-		errorAlert({
-			text: 'Erro'
+		customConfirm({
+			text: 'Deseja realmente cancelar?',
+			functionYes: function(){
+				$('#edit').fadeOut("fast");
+			}
 		});
-		$('#edit').fadeOut("fast");
 	});
+	
+
+
+
 	// Form Save Button
 	$('#save').click(function(){
 		var fields = {};
