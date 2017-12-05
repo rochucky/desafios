@@ -35,6 +35,7 @@ $(document).ready(function(){
 			text: 'Deseja realmente cancelar?',
 			functionYes: function(){
 				$('#edit').fadeOut("fast");
+				n.close();
 			}
 		});
 	});
